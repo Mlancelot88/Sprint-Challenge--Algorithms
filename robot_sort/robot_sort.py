@@ -109,6 +109,11 @@ class SortingRobot:
             a. Robot moves to the left and grabs the item.
             b. Robot proceeds to move right until it finds a return of 1. The current item is dropped.
             c. Robot continues to the right and checks next item.
+        3. If the light is on and the compared items are equal in value, expect a return of 0.
+            a. Robot proceeds to pickup up the duplicate item.
+            b. Robot will move left to find the duplicate.
+            c. The item will be swapped with the pair number that is not a duplicate.
+            d. Once the duplicates are side by side, our robot should continue to move right to check other numbers.
         """
 
         # Fill this out
@@ -124,11 +129,12 @@ class SortingRobot:
                         self.swap_item()
                         self.move_right()
                         self.set_light_off()
-                    #Step 2 (a-c). Looks if current item returns as -1.
+                    # Step 2 (a-c). Looks if current item returns as -1.
                     if self.compare_item() == -1:
                         self.move_left()
                         self.swap_item()
                         self.move_right()
+                    # Step 3 (a-d). Looks if current item returns as 0.
                     if self.compare_item() == 0:
                         self.move_left()
                         self.swap_item()
