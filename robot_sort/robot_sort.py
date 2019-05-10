@@ -96,12 +96,24 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
+        """
+        ## Robot Processes
+        1. While the light is on and the robot can move right
+            a. Robot should swap current item (item is None by default) then move right.
+            b. If the robot determines the compared item is greater, the compare_item returns 1.
+            c. With a return of 1, swap the item with current stash.
+            d. Robot moves left to the item that needs to be swapped, then swaps it.
+            e. Robot move right again and keeps comparing.
+            f. If there is nothing left to compare as a 1, turn the light off and end loop.
+        """
+
         # Fill this out
         while not self.light_is_on():
             self.set_light_on()
             while self.can_move_right():
                     self.swap_item()
                     self.move_right()
+                    # Step 1 (a-f). Looks if current item returns as 1.
                     if self.compare_item() == 1:
                         self.swap_item()
                         self.move_left()
