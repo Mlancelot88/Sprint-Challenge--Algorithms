@@ -105,6 +105,10 @@ class SortingRobot:
             d. Robot moves left to the item that needs to be swapped, then swaps it.
             e. Robot move right again and keeps comparing.
             f. If there is nothing left to compare as a 1, turn the light off and end loop.
+        2. If the light is on and the item is less than, we should expect a return of -1.
+            a. Robot moves to the left and grabs the item.
+            b. Robot proceeds to move right until it finds a return of 1. The current item is dropped.
+            c. Robot continues to the right and checks next item.
         """
 
         # Fill this out
@@ -120,6 +124,7 @@ class SortingRobot:
                         self.swap_item()
                         self.move_right()
                         self.set_light_off()
+                    #Step 2 (a-c). Looks if current item returns as -1.
                     if self.compare_item() == -1:
                         self.move_left()
                         self.swap_item()
