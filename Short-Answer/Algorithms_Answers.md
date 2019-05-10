@@ -30,9 +30,9 @@ C) O(2^n). This is a recursive algorithm. It is solving a problem of size n by r
 
 ## Exercise II Answers
 
-This is quite puzzling but if I'm understanding this correctly, we could turn to a recursive algorithm to half the number of floors until we find the correct floor.
+This is quite puzzling but if I'm understanding this correctly, we could turn to a recursive algorithm to half the number of floors until we find the correct floor. More specifically, a binary search.
 
-Our building is _n_ stories and we're looking for floor _f_. Let's drop the egg of floor n/2. If our egg does break, floor n/2 becomes our top floor. We would continue to take n/2 until the correct floor is found.
+Our building is _n_ stories and we're looking for floor _f_. Let's drop the egg off floor n/2. If our egg does break, floor n/2 becomes our top floor. We would continue to take n/2 until the correct floor is found.
 
 If the opposite was to occur and our egg did not break on the first drop, floor n/2 becomes our bottom floor. We could continue with n/2 until the number of floors is reduced to floor _f_.
 
